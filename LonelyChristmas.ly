@@ -334,6 +334,11 @@ melody = \relative c' {
   \transpose c des { \melody-last }
 }
 
+melody-transposed = \transpose c f, { \melody }
+upper-midi-transposed = \transpose c f, { \upper-midi }
+lower-midi-transposed = \transpose c f, { \lower-midi }
+upper-print-transposed = \transpose c f, { \upper-print }
+lower-print-transposed = \transpose c f, { \lower-print }
 
 \book {
 \score {
@@ -347,7 +352,7 @@ melody = \relative c' {
       \set Staff.midiMinimumVolume = #0.9
       \set Staff.midiMaximumVolume = #1
       \new Voice = "melody" {
-        \melody
+        \melody-transposed
       }
       \context Lyrics = "lyrics" { \lyricsto "melody" { \lyricsmain } }
     >>
@@ -357,12 +362,12 @@ melody = \relative c' {
       \new Staff = "right" {
         \set Staff.midiMinimumVolume = #0.1
         \set Staff.midiMaximumVolume = #0.5
-        \upper-midi
+        \upper-midi-transposed
       }
       \new Staff = "left" {
         \set Staff.midiMinimumVolume = #0.1
         \set Staff.midiMaximumVolume = #0.5
-        \lower-midi
+        \lower-midi-transposed
       }
     >>
   >>
@@ -388,16 +393,16 @@ melody = \relative c' {
       \set Staff.midiInstrument = #"choir aahs"
       \set Staff.instrumentName = #"Voice"
       \new Voice = "melody" {
-        \melody
+        \melody-transposed
       }
       \context Lyrics = "lyrics" { \lyricsto "melody" { \lyricsmain } }
     >>
     \new PianoStaff <<
       \set Staff.midiInstrument = #"acoustic grand"
       \set Staff.instrumentName = #"Piano"
-      \new Staff = "right" { \upper-print }
+      \new Staff = "right" { \upper-print-transposed }
       \new Dynamics = "Dynamics_pf" \dynamics
-      \new Staff = "left" { \lower-print }
+      \new Staff = "left" { \lower-print-transposed }
     >>
   >>
   \layout {
