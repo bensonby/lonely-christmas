@@ -72,7 +72,7 @@ upper-melodya-dash = \relative c' {
   r4 <a c>8~ <aes c>4. <g b>4 <g b f' g>8~ q8 d8 g <g b f'>4 <gis b e>8~ q4. r8 d' f d b aes
   <g bes f'>2. <a cis e>4. e'8 f \acciaccatura dis16 e8 <d, g a c>4. <d g b> d'8 \acciaccatura ais16 b8 <cis, fis a>8~ q4.
   <c f>8 \acciaccatura gis'16 a8 c a4. <f aes c>4 <f d'>8~ q <c' e>4 <f, aes d>4.~ q4
-  c16 f aes d g f ees des c bes aes g f ees
+  c'16 f aes d g f ees des c bes aes g f ees
 }
 
 lower-melodyb = \relative c, {
@@ -88,18 +88,30 @@ lower-melodyb = \relative c, {
 }
 
 upper-melodyb = \relative c {
-  \clef bass <e g a d>4. \clef treble <e' g a d>4. e'8 g a \acciaccatura ais16 b4.
-  \clef bass <e,,, g a d>4. \clef treble <e' g a d>4. g'8 a b \acciaccatura cis16 d4.
+  % \clef bass % depending on transpoing interval
+  <e' g a d>4.
+  % \clef treble % depending on transpoing interval
+  <e' g a d>4. e'8 g a \acciaccatura ais16 b4.
+  % \clef bass % depending on transpoing interval
+  <e,,, g a d>4.
+  % \clef treble % depending on transpoing interval
+  <e' g a d>4. g'8 a b \acciaccatura cis16 d4.
   <f,, a c d>4. <d e gis b>4 <e g a c>8~ q2.
   <d f aes c>4 <c e ges bes>8~ q <c ees a>4 <c d aes'>4.~ <c d g>
-  \clef bass <e, g a d>4. \clef treble <e' g a d>4. e'8 g a \acciaccatura ais16 b4.
-  \clef bass <e,,, g a d>4. \clef treble <e' g a d>4. g'8 a b \acciaccatura cis16 d4.
+  % \clef bass % depending on transpoing interval
+  <e, g a d>4.
+  % \clef treble % depending on transpoing interval
+  <e' g a d>4. e'8 g a \acciaccatura ais16 b4.
+  % \clef bass % depending on transpoing interval
+  <e,,, g a d>4.
+  % \clef treble % depending on transpoing interval
+  <e' g a d>4. g'8 a b \acciaccatura cis16 d4.
   <f,, a c d>4. <d e gis b>4 <e g a c>8~ q2.
   <d f aes c>4 <c e ges bes>8~ q <c ees a>4 <c d aes'>2.
-  <e g b d>8 e g <b d> e, g <e g a c> b' <e, g b d>8~ q b' g
+  <e, g b d>8 e g <b d> e, g <e g a c> b' <e, g b d>8~ q b' g
 }
 
-lower-melodyc = \relative c {
+lower-melodyc = \relative c' {
   <fis e'>8 q q q q q
   <f e'>8 q q q q q
   <e d'>8 q q q q q
@@ -115,11 +127,11 @@ lower-melodyc = \relative c {
   <a, bes'>8 q q <aes bes'> q q
   <d c'> q q q q q
   <e d'> q q q q q
-  <f, f'> q <g g'> q <aes aes'> q
+  <f,, f'> q <g g'> q <aes aes'> q
   <bes bes'>4. <aes aes'>
 }
 
-upper-melodyc = \relative c'' {
+upper-melodyc = \relative c''' {
   <a c>8 q q q q q
   <g aes d>8 q q q q q
   <g b d> q q <fis b d> q q
