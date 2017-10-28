@@ -96,7 +96,7 @@ upper-melodyb = \relative c {
   <e,,, g a d>4.
   % \clef treble % depending on transpoing interval
   <e' g a d>4. g'8 a b \acciaccatura cis16 d4.
-  <f,, a c d>4. <d e gis b>4 <e g a c>8~ q2.
+  <f,, a c d>4. d8~ <d e gis b>8 <e g a c>8~ q2.
   <d f aes c>4 <c e ges bes>8~ q <c ees a>4 <c d aes'>4.~ <c d g>
   % \clef bass % depending on transpoing interval
   <e, g a d>4.
@@ -106,7 +106,7 @@ upper-melodyb = \relative c {
   <e,,, g a d>4.
   % \clef treble % depending on transpoing interval
   <e' g a d>4. g'8 a b \acciaccatura cis16 d4.
-  <f,, a c d>4. <d e gis b>4 <e g a c>8~ q2.
+  <f,, a c d>4. d8~ <d e gis b>8 <e g a c>8~ q2.
   <d f aes c>4 <c e ges bes>8~ q <c ees a>4 <c d aes'>2.
   <e, g b d>8 e g <b d> e, g <e g a c> b' <e, g b d>8~ q b' g
 }
@@ -127,7 +127,7 @@ lower-melodyc = \relative c' {
   <a, bes'>8 q q <aes bes'> q q
   <d c'> q q q q q
   <e d'> q q q q q
-  <f,, f'> q <g g'> q <aes aes'> q
+  <f, f'>4 <g g'>8~ q <aes aes'>4
   <bes bes'>4. <aes aes'>
 }
 
@@ -136,7 +136,7 @@ upper-melodyc = \relative c''' {
   <g aes d>8 q q q q q
   <g b d> q q <fis b d> q q
   <e g bes d> q <ees g bes c> q q q
-  <f a c> q q q q q
+  <f a c> q q <f a b> q q
   <f g c> q q <f aes d> q q
   <e g b c e> q q q q q
   <e g bes cis e> q q q q q
@@ -146,8 +146,8 @@ upper-melodyc = \relative c''' {
   <g b d> q q <fis b d> q q
   <e g bes d> q <ees g bes c> q q q
   <f a c> q q q q q
-  <fis a c> q q q q q
-  <c ees bes' c> q <cis e c'> <cis e bes'> <b d f bes> <ces ees ges aes>
+  <g b> q q q q q
+  <c, ees aes c> q <cis e c'> <cis e bes'> <b d f bes> <ces ees ges aes>
   <aes c d g>4. <a c d fis>
 }
 
