@@ -242,10 +242,6 @@ dynamics = {
 }
 
 guitarchords = \chordmode {
-  a2.:m7/e d:m7 c:maj7 bes,4.:maj9 aes,:maj7
-  ees2.:maj13 d:maj9 des:m7 f4.:m9/c bes,:m13
-  g2.:m7 fis:m9 d4.:m11/f e:m7 b2.:maj9/dis
-  d2.:m7 d4:m7.5- c:11/e fis:m7.5- b2.:dim7/g
 }
 
 lyricsmain = \lyricmode {
@@ -372,9 +368,9 @@ lower-print-transposed = \transpose c f, { \lower-print }
 \book {
 \score {
   <<
-    \new ChordNames {
-      \guitarchords
-    }
+    % \new ChordNames {
+      % \guitarchords
+    % }
     \new Staff = "melodystaff" <<
       \set Staff.midiInstrument = #"electric guitar (clean)"
       \set Staff.instrumentName = #"Voice"
@@ -412,7 +408,7 @@ lower-print-transposed = \transpose c f, { \lower-print }
   <<
     \new ChordNames {
       \set chordChanges = ##t
-      \guitarchords
+      % \guitarchords
     }
     \new Staff = "melodystaff" \with {
       fontSize = #-3
