@@ -42,6 +42,18 @@ makeOctaves = #(define-music-function (parser location arg mus) (integer? ly:mus
   arranger = "Arranged by Benson"
 }
 
+upper-prelude = \relative c {
+  <a''' e'>4 <d, a' e'>8 gis a c <d, g b e>4 <e bes' cis f>8~ q e' b
+  d4 <e, gis d'>8~ q c' b << { c2. } \\ { r8 dis, fis a bes b } >>
+  <e, g c>4 <e aes c>8~ q c f <f aes c>4 <f aes d>8~ q4 b8
+  <ees, c'>4. g4 f8 <a, b e>4.~ <a b d>
+}
+
+lower-prelude = \relative c {
+  f4 bes8 bes,4. e4 a,8 a' g,4 r4 fis8~ fis4. b2.
+  a4. aes4. g2. fis2. f
+}
+
 lower-melodya = \relative c {
   e2. d c bes4. aes
   ees'2. d des c4. bes
@@ -157,6 +169,7 @@ upper-midi = \relative c' {
   \clef treble
   \tempo 4. = 78
   \time 12/8
+  \upper-prelude
   \upper-melodya
   \upper-melodya-dash
   \upper-melodyb
@@ -174,6 +187,7 @@ lower-midi = \relative c {
   \key c \major
   \clef bass
   \time 12/8
+  \lower-prelude
   \lower-melodya
   \lower-melodya-dash
   \lower-melodyb
@@ -192,6 +206,7 @@ upper-print = \relative c' {
   \clef treble
   \tempo 4. = 78
   \time 12/8
+  \upper-prelude
   \upper-melodya
   \upper-melodya-dash
   \upper-melodyb
@@ -209,6 +224,7 @@ lower-print = \relative c {
   \key c \major
   \clef bass
   \time 12/8
+  \lower-prelude
   \lower-melodya
   \lower-melodya-dash
   \lower-melodyb
@@ -334,6 +350,7 @@ melody = \relative c' {
   \key c \major
   \clef treble
   \time 12/8
+  R1.*4
   \melodya
   \melodya-dash
   \melodyb r2.
@@ -361,8 +378,8 @@ lower-print-transposed = \transpose c f, { \lower-print }
     \new Staff = "melodystaff" <<
       \set Staff.midiInstrument = #"electric guitar (clean)"
       \set Staff.instrumentName = #"Voice"
-      \set Staff.midiMinimumVolume = #0.9
-      \set Staff.midiMaximumVolume = #1
+      \set Staff.midiMinimumVolume = #0.5
+      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "melody" {
         \melody-transposed
       }
