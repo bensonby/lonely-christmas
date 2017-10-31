@@ -120,7 +120,34 @@ upper-melodyb = \relative c {
   <e' g a d>4. g'8 a b \acciaccatura cis16 d4.
   <f,, a c d>4. d8~ <d e gis b>8 <e g a c>8~ q2.
   <d f aes c>4 <c e ges bes>8~ q <c ees a>4 <c d aes'>2.
-  <e, g b d>8 e g <b d> e, g <e g a c> b' <e, g b d>8~ q b' g
+  <e, g b d>8 e g <b d> e, g
+}
+
+upper-melodyb-end-a = \relative c' {
+  <e g a c>8 b' <e, g b d>8~ q b' g
+}
+
+upper-episode = \relative c'' {
+  dis8 e g g e g
+  a4 c8~ c a c
+  d4 d8~ d c d
+  e g b g e d
+  d4 c8~ c g g
+  a f c'~ c a c
+  g' a d,~ d c d
+  c2. r2.
+}
+
+lower-episode = \relative c {
+  <f a c e>2.
+  <bes d aes' c>
+  <a e' g b>
+  <aes ees' g bes>4. <g d' e>
+  <fis c' e>2.
+  <f aes c ees>
+  <e a d g>2.
+  <d aes' c f>4.
+  <g c aes'>
 }
 
 lower-melodyc = \relative c' {
@@ -173,30 +200,18 @@ upper-midi = \relative c' {
   \upper-melodya
   \upper-melodya-dash
   \upper-melodyb
+  \upper-episode
   \upper-melodya-dash
   \upper-melodyb
+  \upper-melodyb-end-a
   \upper-melodyc
   \key des \major
-  \transpose c des { \upper-melodyb }
-  \transpose c des { \upper-melodyb }
-  \bar "|."
-}
-
-lower-midi = \relative c {
-  \set Staff.pedalSustainStyle = #'bracket
-  \key c \major
-  \clef bass
-  \time 12/8
-  \lower-prelude
-  \lower-melodya
-  \lower-melodya-dash
-  \lower-melodyb
-  \lower-melodya-dash
-  \lower-melodyb
-  \lower-melodyc
-  \key des \major
-  \transpose c des { \lower-melodyb }
-  \transpose c des { \lower-melodyb }
+  \transpose c des {
+    \upper-melodyb
+    \upper-melodyb-end-a
+    \upper-melodyb
+    \upper-melodyb-end-a
+  }
   \bar "|."
 }
 
@@ -210,12 +225,37 @@ upper-print = \relative c' {
   \upper-melodya
   \upper-melodya-dash
   \upper-melodyb
+  \upper-episode
   \upper-melodya-dash
   \upper-melodyb
+  \upper-melodyb-end-a
   \upper-melodyc
   \key des \major
-  \transpose c des { \upper-melodyb }
-  \transpose c des { \upper-melodyb }
+  \transpose c des {
+    \upper-melodyb
+    \upper-melodyb-end-a
+    \upper-melodyb
+    \upper-melodyb-end-a
+  }
+  \bar "|."
+}
+
+lower-midi = \relative c {
+  \set Staff.pedalSustainStyle = #'bracket
+  \key c \major
+  \clef bass
+  \time 12/8
+  \lower-prelude
+  \lower-melodya
+  \lower-melodya-dash
+  \lower-melodyb
+  \lower-episode
+  \lower-melodya-dash
+  \lower-melodyb
+  \lower-melodyc
+  \key des \major
+  \transpose c des { \lower-melodyb }
+  \transpose c des { \lower-melodyb }
   \bar "|."
 }
 
@@ -228,6 +268,7 @@ lower-print = \relative c {
   \lower-melodya
   \lower-melodya-dash
   \lower-melodyb
+  \lower-episode
   \lower-melodya-dash
   \lower-melodyb
   \lower-melodyc
@@ -350,6 +391,7 @@ melody = \relative c' {
   \melodya
   \melodya-dash
   \melodyb r2.
+  R1.*4
   \melodya-dash
   \melodyb
   \melodyc
@@ -385,13 +427,13 @@ lower-print-transposed = \transpose c f, { \lower-print }
       \set Staff.midiInstrument = #"acoustic grand"
       \set Staff.instrumentName = #"Piano"
       \new Staff = "right" {
-        \set Staff.midiMinimumVolume = #0.1
-        \set Staff.midiMaximumVolume = #0.5
+        \set Staff.midiMinimumVolume = #0.9
+        \set Staff.midiMaximumVolume = #1
         \upper-midi-transposed
       }
       \new Staff = "left" {
-        \set Staff.midiMinimumVolume = #0.1
-        \set Staff.midiMaximumVolume = #0.5
+        \set Staff.midiMinimumVolume = #0.9
+        \set Staff.midiMaximumVolume = #1
         \lower-midi-transposed
       }
     >>
