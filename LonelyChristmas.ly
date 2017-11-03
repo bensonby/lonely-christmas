@@ -132,23 +132,23 @@ upper-episode = \relative c'' {
   dis8 e g g e g
   a4 c8~ c a c
   d4 d8~ d c d
-  e g b g e d
-  d4 c8~ c g g
+  <e g,> g b g e d
+  <d ees,>4 <c d, e>8~ q g g
   a f c'~ c a c
   g' a d,~ d c d
-  c2. r2.
+  <c g d>4. e,8 cis a <aes c f>4. <aes c g'> 
 }
 
 lower-episode = \relative c {
-  <f a c e>2.
-  <bes d aes' c>
-  <a e' g b>
-  <aes ees' g bes>4. <g d' e>
-  <fis c' e>2.
-  <f aes c ees>
-  <e a d g>2.
-  <d aes' c f>4.
-  <g c aes'>
+  <f e'>4. <a' c>
+  <bes, d aes'> <c' d>
+  a,8 e' g d'4.
+  <aes, g' bes>4 <g g'>8~ q4.
+  fis8 c' a' e'4.
+  <f,, ees'>4. <aes' c>
+  <e, d'>2.
+  d4.
+  g
 }
 
 lower-melodyc = \relative c' {
@@ -174,16 +174,16 @@ lower-melodyc = \relative c' {
 upper-melodyc = \relative c''' {
   <a c>8 q q q q q
   <g aes d>8 q q q q q
-  <g b d> q q <fis b d> q q
+  <g b d> q q <fis bes d> q q
   <e g bes d> q <ees g bes c> q q q
-  <f a c> q q <f a b> q q
+  <f a c> q q <f a cis> q q
   <f g c> q q <f aes d> q q
   <e g b c e> q q q q q
   <e g bes cis e> q q q q q
 
   <a c>8 q q q q q
   <g aes d>8 q q q q q
-  <g b d> q q <fis b d> q q
+  <g b d> q q <fis bes d> q q
   <e g bes d> q <ees g bes c> q q q
   <f a c> q q q q q
   <g b> q q q q q
@@ -417,8 +417,8 @@ lower-print-transposed = \transpose c f, { \lower-print }
     \new Staff = "melodystaff" <<
       \set Staff.midiInstrument = #"electric guitar (clean)"
       \set Staff.instrumentName = #"Voice"
-      \set Staff.midiMinimumVolume = #0.5
-      \set Staff.midiMaximumVolume = #0.6
+      \set Staff.midiMinimumVolume = #0.9
+      \set Staff.midiMaximumVolume = #1
       \new Voice = "melody" {
         \melody-transposed
       }
@@ -428,13 +428,13 @@ lower-print-transposed = \transpose c f, { \lower-print }
       \set Staff.midiInstrument = #"acoustic grand"
       \set Staff.instrumentName = #"Piano"
       \new Staff = "right" {
-        \set Staff.midiMinimumVolume = #0.9
-        \set Staff.midiMaximumVolume = #1
+        \set Staff.midiMinimumVolume = #0.1
+        \set Staff.midiMaximumVolume = #0.4
         \upper-midi-transposed
       }
       \new Staff = "left" {
-        \set Staff.midiMinimumVolume = #0.9
-        \set Staff.midiMaximumVolume = #1
+        \set Staff.midiMinimumVolume = #0.1
+        \set Staff.midiMaximumVolume = #0.4
         \lower-midi-transposed
       }
     >>
