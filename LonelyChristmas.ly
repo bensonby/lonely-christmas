@@ -191,6 +191,36 @@ upper-melodyc = \relative c''' {
   <aes c d g>4. <a c d fis>
 }
 
+upper-ending = \relative c'' {
+  a8 c d e g a
+  <f c'>4. <e bes'> <ees a> <d aes'>
+  << {
+    \tuplet 2/3 { e'8 e } e4.
+    \tuplet 2/3 { e8 e } e4.
+    \tuplet 2/3 4. {
+      \set Score.tempoHideNote = ##t
+      \tempo 4. = 74
+      e8
+      \tempo 4. = 66
+      g
+      \tempo 4. = 54
+      c,
+      \tempo 4. = 40
+      d
+      \tempo 4. = 32
+    } e2.
+  } \\ {
+    <g, b>4. <fis a> <f aes> <e g>
+    <f b>
+    \omit TupletNumber
+    \tuplet 2/3 { <d f>8 <f aes> } <g b>2.
+  } >>
+}
+
+lower-ending = \relative c' {
+  d4. e fis g c b bes a aes g c,2.
+}
+
 upper-midi = \relative c' {
   \set Staff.pedalSustainStyle = #'bracket
   \key c \major
@@ -211,7 +241,7 @@ upper-midi = \relative c' {
     \upper-melodyb
     \upper-melodyb-end-a
     \upper-melodyb
-    \upper-melodyb-end-a
+    \upper-ending
   }
   \bar "|."
 }
@@ -236,7 +266,7 @@ upper-print = \relative c' {
     \upper-melodyb
     \upper-melodyb-end-a
     \upper-melodyb
-    \upper-melodyb-end-a
+    \upper-ending
   }
   \bar "|."
 }
@@ -255,8 +285,11 @@ lower-midi = \relative c {
   \lower-melodyb
   \lower-melodyc
   \key des \major
-  \transpose c des { \lower-melodyb }
-  \transpose c des { \lower-melodyb }
+  \transpose c des {
+    \lower-melodyb
+    \lower-melodyb
+    \lower-ending
+  }
   \bar "|."
 }
 
@@ -274,13 +307,17 @@ lower-print = \relative c {
   \lower-melodyb
   \lower-melodyc
   \key des \major
-  \transpose c des { \lower-melodyb }
-  \transpose c des { \lower-melodyb }
+  \transpose c des {
+    \lower-melodyb
+    \lower-melodyb
+    \lower-ending
+  }
   \bar "|."
 }
 
 dynamics = {
-  s1
+  s1.*78
+  s4.-"rit."
 }
 
 guitarchords = \chordmode {
@@ -400,6 +437,8 @@ melody = \relative c' {
   \transpose c des { \melodyb r2. }
   \transpose c des { \melodyb }
   \transpose c des { \melody-last }
+  r2.
+  R1.
 }
 
 melody-transposed = \transpose c f, { \melody }
