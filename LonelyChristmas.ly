@@ -1,5 +1,5 @@
 \version "2.18.2"
-#(set-global-staff-size 16)
+#(set-global-staff-size 15)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  http://lsr.di.unimi.it/LSR/Item?id=445
@@ -38,16 +38,16 @@ makeOctaves = #(define-music-function (parser location arg mus) (integer? ly:mus
 
 
 \header {
-  title = "陳奕迅 - Lonely Christmas"
+  title = "陳奕迅 - Lonely Christmas (Jazz)"
   subtitle = "For female voice and piano accompaniment"
   arranger = "Arranged by Benson"
 }
 
 upper-prelude = \relative c {
-  <a''' e'>4 <d, a' e'>8 gis a c <d, g b e>4 <e bes' cis f>8~ q e' b
-  d4 <e, gis d'>8~ q c' b << { c2. } \\ { r8 dis, fis a bes b } >>
-  <e, g c>4 <e aes c>8~ q c f <f aes c>4 <f aes d>8~ q4 b8
-  <ees, c'>4. g4 f8 <a, b e>4.~ <a b d>
+  << { \stemNeutral <a''' e'>4\( <d, a' e'>8 gis a c <d, g b e>4 <e bes' cis f>8~ q e' b
+  d4 <e, gis d'>8~ q c' b \stemUp c2.\) } \\ { s1. s2. \stemDown r8 dis, fis a bes b } >>
+  <e, g c>4\( <e aes c>8~ q c f <f aes c>4 <f aes d>8~ q4 b8
+  <ees, c'>4.\) g4\( f8 <a, b e>4.~ <a b d>\)
 }
 
 lower-prelude = \relative c {
@@ -59,68 +59,68 @@ lower-melodya = \relative c {
   e2. d c bes4. aes
   ees'2. d des c4. bes
   g'2. fis f4. e dis2.
-  d2. d,4 e8~ e fis4 g2.~ g2.
+  d2. d,4-- e8~-- e fis4-- g2.~-- g2.
 }
 
 upper-melodya = \relative c' {
   \clef treble
-  <g' a c>2. <f a c> <e g b> <c f a>4 a'8 <c, ees g c>8 bes' aes
-  <c, d g>2. <e fis cis'> <e gis b>4. gis8 a b <f g c>8 bes aes g4.
-  <f bes d>2. <a cis e>4. f'8 \acciaccatura dis16 e8 d <d, g a c>4. <d g b> <cis fis a>2.
-  <c f>8 \acciaccatura gis'16 a8 c a4. <f aes c>4 <f d'>8~ q <c' e>4 <f, aes d>4.
-  f16 g aes bes c aes bes c d e f fis g4.
+  <g' a c>2. <f a c> <e g b> <c f a>4\(^\< a'8\! <c, ees g c>8^\> bes' aes\!
+  <c, d g>2.\) <e fis cis'> <e gis b>4. gis8\(^\< a b\! <f g c>8^\> bes aes\! g4.\)
+  <f bes d>2.\( <a cis e>4. f'8 \acciaccatura dis16 e8 d <d, g a c>4. <d g b> <cis fis a>2.\)
+  <c f>8\( \acciaccatura gis'16 a8 c a4.\) <f aes c>4-- <f d'>8~-- q <c' e>4-- <f, aes d>4.--
+  f16\( g aes bes c aes bes c d e f fis g4.\)
 }
 
 lower-melodya-dash = \relative c {
   e4.~ e4 ees8~ ees2.
-  r4 <d a'>8~ q4 aes8 g2.
+  r4 <d a'>8~-- q4 aes8 g2.
   c8~ <c b'>4~ q4. cis4 d8~ d4. dis4 << { s8 r8 b' e~ e2. } \\ { e,8~ e4.~ e2. } >>
-  g2. fis f4. e r4 <dis dis,>8~ q4.
-  d2. d,4 e8~ e fis4 g2.~ g4. g8 a b
+  g2. fis f4. e r4 <dis dis,>8~-- q4.
+  d2. d,4-- e8~-- e fis4-- g2.~-- g4. g8 a b
 }
 
 upper-melodya-dash = \relative c' {
   <e g a d>8 e g <a d> g <ees g a d>~ q ees g a d4
-  r4 <c, aes'>8~ q8 c4 r4 c8 <f aes d>4.
-  r4 <a c>8~ <aes c>4. <g b>4 <g b f' g>8~ q8 d8 g <g b f'>4 <gis b e>8~ q4. r8 d' f d b aes
-  <g bes f'>2. <a cis e>4. e'8 f \acciaccatura dis16 e8 <d, g a c>4. <d g b> d'8 \acciaccatura ais16 b8 <cis, fis a>8~ q4.
-  <c f>8 \acciaccatura gis'16 a8 c a4. <f aes c>4 <f d'>8~ q <c' e>4 <f, aes d>4.~ q4
-  c'16 f aes d g f ees des c bes aes g f ees
+  r4 <c, aes'>8~-- q8 c4 r4 c8\( <f aes d>4.\)
+  r4 <a c>8~ <aes c>4. <g b>4 <g b f' g>8~ q8 d8 g <g b f'>4 <gis b e>8~ q4. r8 d'\( f d b aes\)
+  <g bes f'>2.\( <a cis e>4. e'8 f \acciaccatura dis16 e8 <d, g a c>4. <d g b>\) d'8\( \acciaccatura ais16 b8 <cis, fis a>8~\)-- q4.
+  <c f>8\( \acciaccatura gis'16 a8 c a4.\) <f aes c>4-- <f d'>8~-- q <c' e>4-- <f, aes d>4.~-- q4
+  c'16\( f aes d g f ees des c bes aes g f ees\)
 }
 
 lower-melodyb = \relative c, {
   <c c'>2.~ q
   <a a'>~ q
-  f''4. g4 a8~ a2.
-  d,4 e8~ e fis4 g2.
+  f''4. g4 a8~-- a2.
+  d,4-- e8~-- e fis4-- g2.--
   <c,, c'>2.~ q
   <a a'>~ q
-  f''4. g4 a8~ a a c \change Staff = "right" e a c
+  f''4. g4 a8~-- a a c \change Staff = "right" e a c
   \change Staff = "left"
-  d,,4 e8~ e fis4 g2. c,2.~ c
+  d,,4-- e8~-- e fis4-- g2.-- c,2.~ c
 }
 
 upper-melodyb = \relative c {
   % \clef bass % depending on transpoing interval
   <e' g a d>4.
   % \clef treble % depending on transpoing interval
-  <e' g a d>4. e'8 g a \acciaccatura ais16 b4.
+  <e' g a d>4. e'8\( g a \acciaccatura ais16 b4.\)
   % \clef bass % depending on transpoing interval
   <e,,, g a d>4.
   % \clef treble % depending on transpoing interval
-  <e' g a d>4. g'8 a b \acciaccatura cis16 d4.
-  <f,, a c d>4. d8~ <d e gis b>8 <e g a c>8~ q2.
-  <d f aes c>4 <c e ges bes>8~ q <c ees a>4 <c d aes'>4.~ <c d g>
+  <e' g a d>4. g'8\( a b \acciaccatura cis16 d4.\)
+  <f,, a c d>4. d8~ <d e gis b>8 <e g a c>8~-- q2.
+  <d f aes c>4-- <c e ges bes>8~-- q <c ees a>4-- <c d aes'>4.~-- <c d g>
   % \clef bass % depending on transpoing interval
   <e, g a d>4.
   % \clef treble % depending on transpoing interval
-  <e' g a d>4. e'8 g a \acciaccatura ais16 b4.
+  <e' g a d>4. e'8\( g a \acciaccatura ais16 b4.\)
   % \clef bass % depending on transpoing interval
   <e,,, g a d>4.
   % \clef treble % depending on transpoing interval
-  <e' g a d>4. g'8 a b \acciaccatura cis16 d4.
-  <f,, a c d>4. d8~ <d e gis b>8 <e g a c>8~ q2.
-  <d f aes c>4 <c e ges bes>8~ q <c ees a>4 <c d aes'>2.
+  <e' g a d>4. g'8\( a b \acciaccatura cis16 d4.\)
+  <f,, a c d>4. d8~ <d e gis b>8 <e g a c>8~-- q2.
+  <d f aes c>4-- <c e ges bes>8~-- q <c ees a>4-- <c d aes'>2.--
   <e, g b d>8 e g <b d> e, g
 }
 
@@ -129,21 +129,21 @@ upper-melodyb-end-a = \relative c' {
 }
 
 upper-episode = \relative c'' {
-  dis8 e g g e g
+  dis8\( e g g e g
   a4 c8~ c a c
   d4 d8~ d c d
   <e g,> g b g e d
-  <d ees,>4 <c d, e>8~ q g g
+  <d ees,>4-- <c d, e>8~\)-- q g\( g
   a f c'~ c a c
   g' a d,~ d c d
-  <c g d>4. e,8 cis a <aes c f>4. <aes c g'> 
+  <c g d>4.\) e,8 cis a <aes c f>4. <aes c g'> 
 }
 
 lower-episode = \relative c {
   <f e'>4. <a' c>
   <bes, d aes'> <c' d>
   a,8 e' g d'4.
-  <aes, g' bes>4 <g g'>8~ q4.
+  <aes, g' bes>4-- <g g'>8~-- q4.
   fis8 c' a' e'4.
   <f,, ees'>4. <aes' c>
   <e, d'>2.
@@ -152,50 +152,50 @@ lower-episode = \relative c {
 }
 
 lower-melodyc = \relative c' {
-  <fis e'>8 q q q q q
-  <f e'>8 q q q q q
-  <e d'>8 q q q q q
-  <a, bes'>8 q q <aes bes'> q q
-  <g a'> q q q q q
-  <g aes'> q q <g g'> q q
-  <c, c'>4 <c' c'>8~ q <c, c'> <b b'>
-  <a a'>2.
+  <fis e'>8-.-> q-. q-. q-.-> q-. q-.
+  <f e'>8-.-> q-. q-. q-.-> q-. q-.
+  <e d'>8-.-> q-. q-. q-.-> q-. q-.
+  <a, bes'>8-.-> q-. q-. <aes bes'>-.-> q-. q-.
+  <g a'>-.-> q-. q-. q-.-> q-. q-.
+  <g aes'>-.-> q-. q-. <g g'>-.-> q-. q-.
+  <c, c'>4->--\sustainOn <c' c'>8~->-- q <c, c'>-> <b b'>->\sustainOff\sustainOn
+  <a a'>2.->--\sustainOff\sustainOn
 
-  <fis'' e'>8 q q q q q
-  <f e'>8 q q q q q
-  <e d'>8 q q q q q
-  <a, bes'>8 q q <aes bes'> q q
-  <d c'> q q q q q
-  <e d'> q q q q q
-  <f, f'>4 <g g'>8~ q <aes aes'>4
-  <bes bes'>4. <aes aes'>
+  <fis'' e'>8-.->\sustainOff q-. q-. q-.-> q-. q-.
+  <f e'>8-.-> q-. q-. q-.-> q-. q-.
+  <e d'>8-.-> q-. q-. q-.-> q-. q-.
+  <a, bes'>8-.-> q-. q-. <aes bes'>-.-> q-. q-.
+  <d c'>-.-> q-. q-. q-.-> q-. q-.
+  <e d'>-.-> q-. q-. q-.-> q-. q-.
+  <f, f'>4->-- <g g'>8~->-- q <aes aes'>4->--
+  <bes bes'>4.->-- <aes aes'>->--
 }
 
 upper-melodyc = \relative c''' {
-  <a c>8 q q q q q
-  <g aes d>8 q q q q q
-  <g b d> q q <fis bes d> q q
-  <e g bes d> q <ees g bes c> q q q
-  <f a c> q q <f a cis> q q
-  <f g c> q q <f aes d> q q
-  <e g b c e> q q q q q
-  <e g bes cis e> q q q q q
+  <a c>8-.-> q-. q-. q-.-> q-. q-.
+  <g aes d>8-.-> q-. q-. q-.-> q-. q-.
+  <g b d>-.-> q-. q-. <fis bes d>-.-> q-. q-.
+  <e g bes d>-.-> q-. <ees g bes c>-.-> q-. q-. q-.
+  <f a c>-.-> q-. q-. <f a cis>-.-> q-. q-.
+  <f g c>-.-> q-. q-. <f aes d>-.-> q-. q-.
+  <e g b c e>-> q q q q q
+  <e g bes cis e>-> q q q q q
 
-  <a c>8 q q q q q
-  <g aes d>8 q q q q q
-  <g b d> q q <fis bes d> q q
-  <e g bes d> q <ees g bes c> q q q
-  <f a c> q q q q q
-  <g b> q q q q q
-  <c, ees aes c> q <cis e c'> <cis e bes'> <b d f bes> <ces ees ges aes>
-  <aes c d g>4. <a c d fis>
+  <a c>8-.-> q-. q-. q-.-> q-. q-.
+  <g aes d>8-.-> q-. q-. q-.-> q-. q-.
+  <g b d>-.-> q-. q-. <fis bes d>-.-> q-. q-.
+  <e g bes d>-.-> q-. <ees g bes c>-. q-.-> q-. q-.
+  <f a c>-.-> q-. q-. q-.-> q-. q-.
+  <g b>-.-> q-. q-. q-.-> q-. q-.
+  <c, ees aes c> q <cis e bes'> q <b d f aes> <ces ees ges aes>
+  <aes c d g>4.->-- <a c d fis>->--
 }
 
 upper-ending = \relative c'' {
-  a8 c d e g a
-  <f c'>4. <e bes'> <ees a> <d aes'>
+  a8\( c d e g a
+  <f c'>4.\) <e bes'> <ees a> <d aes'>
   << {
-    \tuplet 2/3 { e'8 e } e4.
+    \tuplet 2/3 { e'8\( e } e4.
     \tuplet 2/3 { e8 e } e4.
     \tuplet 2/3 4. {
       \set Score.tempoHideNote = ##t
@@ -208,7 +208,7 @@ upper-ending = \relative c'' {
       \tempo 4. = 40
       d
       \tempo 4. = 32
-    } e2.
+    } e2.\)
   } \\ {
     <g, b>4. <fis a> <f aes> <e g>
     <f b>
@@ -316,7 +316,28 @@ lower-print = \relative c {
 }
 
 dynamics = {
-  s1.*78
+  s1.\mf
+  s1.*2
+  s4. s4.\> s4. s4.\!
+  s1.\mp
+  s1.*3
+  s1.\mf
+  s1.*19
+  s8 s4\p s4. s2.\mf
+  s1.*21
+  s1.\mf
+  s1.
+  s1.-"cresc."
+  s4.\ff s4 s8
+  s2.
+  s1.\f
+  s1.
+  s1.-"cresc."
+  s1.\ff
+  s1.\f
+  s1.*16
+  s8 s4\mp s4. s2.
+  s1.*2
   s4.-"rit."
 }
 
