@@ -1,4 +1,5 @@
 \version "2.18.2"
+#(set-global-staff-size 16)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  http://lsr.di.unimi.it/LSR/Item?id=445
@@ -455,6 +456,7 @@ lower-print-transposed = \transpose c f, { \lower-print }
     \new Staff = "melodystaff" \with {
       fontSize = #-3
       \override StaffSymbol.staff-space = #(magstep -3)
+      \override StaffSymbol.thickness = #(magstep -3)
     }
     <<
       \set Staff.midiInstrument = #"choir aahs"
