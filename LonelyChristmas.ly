@@ -412,21 +412,21 @@ melodya = \relative c' {
 }
 
 melodya-dash = \relative c' {
-  r4. c8 d c e4 g8 r g f e4 c8~ c4 r8 r4. r4.
-  r4 c8 c d c e4 g8 r g e b'4 g8~ g4 r8 r4. r4.
+  r4. c8 d c e4 g8 r g f ees8( d) c8~ c4 r8 r4. r4.
+  r4 c8 c d c e4 g8 r g e aes4 g8~ g4 r8 r4. r4.
   r4. f8 g aes c4 aes8~ aes g f g4 e8 r d e d4 cis8~ cis4 r8
-  r4. f8 f e f4 e8~ e8 f4 g2. r4. r4.
+  r4. f8 f e f4 e8~ e8 f4 aes8( g8~) g2 r4. r4.
 }
 
 melodyb = \relative c' {
   e4 g8~ g e g d'4. e
   e,4 g8~ g e g d'4. e8 d e
-  f4 f8 e4 e8 c4 a8 r
-  a c g'4 g8 f4 f8 c4 d8~ d4 r8
+  f4 f8 ees4 d8 c4 a8 r
+  a c g'4 g8 f4 f8 c4 ees8( d4) r8
   e,4 g8~ g e g d'4. e
   e,4 g8~ g e g d'4. e8 d e
-  f4 f8 e4 e8 c4 a8 r
-  a c g'4 g8 f4 f8 c4. d c4. r4.
+  f4 f8 g4 ees8 d4 c8 r
+  a c g'4 aes8 g4 f8 c4. d c4. r4.
 }
 
 melodyc = \relative c'' {
@@ -488,13 +488,13 @@ lower-print-transposed = \transpose c f, { \lower-print }
       \set Staff.midiInstrument = #"acoustic grand"
       \set Staff.instrumentName = #"Piano"
       \new Staff = "right" {
-        \set Staff.midiMinimumVolume = #0.1
-        \set Staff.midiMaximumVolume = #0.4
+        \set Staff.midiMinimumVolume = #0.5
+        \set Staff.midiMaximumVolume = #0.6
         \upper-midi-transposed
       }
       \new Staff = "left" {
-        \set Staff.midiMinimumVolume = #0.1
-        \set Staff.midiMaximumVolume = #0.4
+        \set Staff.midiMinimumVolume = #0.5
+        \set Staff.midiMaximumVolume = #0.6
         \lower-midi-transposed
       }
     >>
