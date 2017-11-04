@@ -43,6 +43,63 @@ makeOctaves = #(define-music-function (parser location arg mus) (integer? ly:mus
   arranger = "Arranged by Benson"
 }
 
+upper-intro = \relative c'' {
+  \cadenzaOn
+  <e g b>1.\arpeggio
+  \tiny
+  << {
+    \tiny
+    \stemNeutral
+    \appoggiatura <d' g>16 b'16[\( c d c b a] b[ c b a b a g e]
+    \acciaccatura d16 ees8->[ d c d c \acciaccatura gis16 a8 c a]
+    \bar "!"
+    \stemUp
+    e2.\)
+  } \\ {
+    \stemDown
+    \tiny
+    s4.
+    s2
+    s1
+    r8
+    c16[\( d e g a c]
+    d[ e g a \ottava #1 d e]
+    a4.\)
+  } >>
+  \stemNeutral
+  \bar "!"
+  \appoggiatura { f16 g f e }
+  f4.\( g,8[ e' e]
+  f,[ d' d c c d]
+  \bar "!"
+  <aes ees'>8\arpeggio[ d d c c bes] \ottava #0 bes[ aes aes g g f]
+  \bar "!"
+  \appoggiatura g,16 g'1.\)
+  \bar "|"
+  \normalsize
+  \cadenzaOff
+}
+
+lower-intro = \relative c' {
+  \cadenzaOn
+  <c g'>1.\arpeggio
+  \tiny
+  s4.
+  s2
+  s1
+  f2.
+  s2
+  d8[\( a' \clef treble e'~] e4. a2.\)
+  f,4\( f' aes~\) aes2.
+  r8
+  d,8[\( d' g a b \ottava #1 d]
+  g4.\)
+  \ottava #0
+  s4
+  \normalsize
+  \cadenzaOff
+}
+
 upper-prelude = \relative c {
   << { \stemNeutral <a''' e'>4\( <d, a' e'>8 gis a c <d, g b e>4 <e bes' cis f>8~ q e' b
   d4 <e, gis d'>8~ q c' b \stemUp c2.\) } \\ { s1. s2. \stemDown r8 dis, fis a bes b } >>
@@ -51,6 +108,7 @@ upper-prelude = \relative c {
 }
 
 lower-prelude = \relative c {
+  \clef bass
   f4 bes8 bes,4. e4 a,8 a' g,4 r4 fis8~ fis4. b2.
   a4. aes4. g2. fis2. f
 }
@@ -227,6 +285,7 @@ upper-midi = \relative c' {
   \clef treble
   \tempo 4. = 78
   \time 12/8
+  \upper-intro
   \upper-prelude
   \upper-melodya
   \upper-melodya-dash
@@ -252,6 +311,7 @@ upper-print = \relative c' {
   \clef treble
   \tempo 4. = 78
   \time 12/8
+  \upper-intro
   \upper-prelude
   \upper-melodya
   \upper-melodya-dash
@@ -276,6 +336,7 @@ lower-midi = \relative c {
   \key c \major
   \clef bass
   \time 12/8
+  \lower-intro
   \lower-prelude
   \lower-melodya
   \lower-melodya-dash
@@ -298,6 +359,7 @@ lower-print = \relative c {
   \key c \major
   \clef bass
   \time 12/8
+  \lower-intro
   \lower-prelude
   \lower-melodya
   \lower-melodya-dash
@@ -316,6 +378,7 @@ lower-print = \relative c {
 }
 
 dynamics = {
+  #(skip-of-length upper-intro)
   s1.\mf
   s1.*2
   s4. s4.\> s4. s4.\!
@@ -446,6 +509,7 @@ melody = \relative c' {
   \key c \major
   \clef treble
   \time 12/8
+  #(skip-of-length upper-intro)
   R1.*4
   \melodya
   \melodya-dash
@@ -488,13 +552,13 @@ lower-print-transposed = \transpose c f, { \lower-print }
       \set Staff.midiInstrument = #"acoustic grand"
       \set Staff.instrumentName = #"Piano"
       \new Staff = "right" {
-        \set Staff.midiMinimumVolume = #0.1
-        \set Staff.midiMaximumVolume = #0.4
+        \set Staff.midiMinimumVolume = #0.5
+        \set Staff.midiMaximumVolume = #0.6
         \upper-midi-transposed
       }
       \new Staff = "left" {
-        \set Staff.midiMinimumVolume = #0.1
-        \set Staff.midiMaximumVolume = #0.4
+        \set Staff.midiMinimumVolume = #0.5
+        \set Staff.midiMaximumVolume = #0.6
         \lower-midi-transposed
       }
     >>
@@ -527,6 +591,7 @@ lower-print-transposed = \transpose c f, { \lower-print }
       \context Lyrics = "lyrics" { \lyricsto "melody" { \lyricsmain } }
     >>
     \new PianoStaff <<
+      \set PianoStaff.connectArpeggios = ##t
       \set Staff.midiInstrument = #"acoustic grand"
       \set Staff.instrumentName = #"Piano"
       \new Staff = "right" { \upper-print-transposed }
