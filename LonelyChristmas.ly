@@ -186,6 +186,10 @@ upper-melodyb-end-a = \relative c' {
   <e g a c>8 b' <e, g b d>8~ q b' g
 }
 
+upper-melodyb-before-melodyc = \relative c'' {
+  dis8 e \acciaccatura f16 fis8 g a b
+}
+
 upper-episode = \relative c'' {
   dis8\( e g g e g
   a4 c8~ c a c
@@ -194,6 +198,17 @@ upper-episode = \relative c'' {
   <d ees,>4-- <c d, e>8~\)-- q g\( g
   a f c'~ c a c
   g' a d,~ d c d
+  <c g d>4.\) e,8 cis a <aes c f>4. <aes c g'> 
+}
+
+upper-episode-jazz = \relative c'' {
+  dis8\( e \acciaccatura f16 fis8 g bes g
+  gis8 a16 b c8~ c8 a c
+  d4 \appoggiatura { f16 e } d8~ d c d
+  <dis g,>16 e fis-1 g-3 a-4 b-5 g8-3 e-1 d-3
+  <d-3 ees,>8-- \tuplet 3/2 8 { e16-5 ees-4 d-3 } <c-2 d, e>8~\)-- q g\( g
+  gis8 a16 b c8~ c8 e,16 gis c e
+  gis8 a d,~ d c d
   <c g d>4.\) e,8 cis a <aes c f>4. <aes c g'> 
 }
 
@@ -290,10 +305,10 @@ upper-midi = \relative c' {
   \upper-melodya
   \upper-melodya-dash
   \upper-melodyb
-  \upper-episode
+  \upper-episode-jazz
   \upper-melodya-dash
   \upper-melodyb
-  \upper-melodyb-end-a
+  \upper-melodyb-before-melodyc
   \upper-melodyc
   \key des \major
   \transpose c des {
@@ -316,10 +331,10 @@ upper-print = \relative c' {
   \upper-melodya
   \upper-melodya-dash
   \upper-melodyb
-  \upper-episode
+  \upper-episode-jazz
   \upper-melodya-dash
   \upper-melodyb
-  \upper-melodyb-end-a
+  \upper-melodyb-before-melodyc
   \upper-melodyc
   \key des \major
   \transpose c des {
