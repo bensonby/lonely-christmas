@@ -556,8 +556,8 @@ lower-print-transposed = \transpose c f, { \lower-print }
     \new Staff = "melodystaff" <<
       \set Staff.midiInstrument = #"electric guitar (clean)"
       \set Staff.instrumentName = #"Voice"
-      \set Staff.midiMinimumVolume = #0.9
-      \set Staff.midiMaximumVolume = #1
+      \set Staff.midiMinimumVolume = #0.5
+      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "melody" {
         \melody-transposed
       }
