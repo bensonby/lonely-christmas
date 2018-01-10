@@ -552,11 +552,11 @@ melody = \relative c' {
   R1.
 }
 
-melody-transposed = \transpose c f, { \melody }
-upper-midi-transposed = \transpose c f, { \upper-midi }
-lower-midi-transposed = \transpose c f, { \lower-midi }
-upper-print-transposed = \transpose c f, { \upper-print }
-lower-print-transposed = \transpose c f, { \lower-print }
+melody-transposed = \transpose c g, { \melody }
+upper-midi-transposed = \transpose c g, { \upper-midi }
+lower-midi-transposed = \transpose c g, { \lower-midi }
+upper-print-transposed = \transpose c g, { \upper-print }
+lower-print-transposed = \transpose c g, { \lower-print }
 
 \book {
 \score {
